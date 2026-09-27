@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: magicpin-vera-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.bot:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: TEAM_NAME
+        value: Vera Builders
+      - key: TEAM_MEMBERS
+        value: Anant
+      - key: LLM_MODEL
+        value: deterministic-rules-v1
